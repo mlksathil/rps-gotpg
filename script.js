@@ -11,7 +11,7 @@ let condition = document.querySelector('#condition');
 let playerScoreBoard = document.querySelector('#pboard');
 let computerScoreBoard = document.querySelector('#cboard');
 
-
+// SECTION: Condition Checking
 function conditionPlay(computerSelection, playerSelection) {
     // ✅ Use simple logic with arithmetic
     // Scissor beats Paper (2 vs 1)
@@ -36,6 +36,7 @@ function conditionPlay(computerSelection, playerSelection) {
     }
 }
 
+// SECTION: Round Start Function
 function roundStart(choice) {
 
     let computerSelection = -1;
@@ -52,6 +53,7 @@ function roundStart(choice) {
 
 }
 
+// SECTION: Game Start Function
 function gameStart(e) {
     const countPlay = 5;
     let computercount = 0;

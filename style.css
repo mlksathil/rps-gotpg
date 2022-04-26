@@ -4,7 +4,6 @@
     font-family: 'Pangolin', cursive;
     font-size: 20px;
     text-align: center;
-    flex-wrap: wrap;
 }
 
 body {
@@ -17,7 +16,7 @@ body {
     align-items: center;
     justify-content: center;
     align-items: center;
-    gap: 0.15rem;
+    gap: 1.25rem;
     align-content: flex-start;
     background-color: #A98467;
     margin: none;
