@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+* {
+    font-family: 'Pangolin', cursive;
+    font-size: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+body {
+    background-color: #F0EAD2;
+    margin: 0;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    gap: 0.15rem;
+    align-content: flex-start;
+    background-color: #A98467;
+    margin: none;
+}
+
+img.header {
+    width: 5rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+}
+
+.scoreboard {
+    display: flex;
+    gap: 10px;
+    justify-content: start;
+    align-items: center;
+    gap: 0.95rem;
+    align-content: stretch;
+    flex: 1;
+}
+
+#pboard, #cboard {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    gap: 0.75rem;
+    align-content: space-between;
+    padding: 0.7rem;
+    max-width: 20rem;
+    min-width: 15rem;
+}
+
+.board {
+    background-color: #414141;
+    color: #fff;
+    border: .15rem solid black;
+    padding: 5px;
+    margin: 3px;
+    width: 30px;
+    text-align: center;
+    align-self: center;
+}
+
+.final {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.weapons {
+    display: flex;
+    gap: 2rem;
+}
+
+.b2 {
+    display: flex;
+    flex-direction: column;
+    width: 6em;
+    height: 6em;
+    background-color: #A98467;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.bimg {
+    width: 3em;
+}
+
+.b2:hover {
+    background-color: #6C584C;
+}
+
+h1 {
+    font-size:  60px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+h3 span {
+    font-size: inherit;
+}
+
+button {
+    border: 3px solid black;
+    padding: 0.25em;
+    margin: 1rem 0.25rem;
+}
+
+.stop {
+    background-color: #6C584C !important;
+}
+
+.start {
+    background-color: #ADC178;
+}

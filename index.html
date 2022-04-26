@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
     <title>Rock, Paper & Scissor</title>
     
 </head>
 
 <body>
-
     <!-- SECTION: Main -->
-    <h1>The Game of Stone Age</h1>
-    <p>Save your clan!</p>
+    <div class="title"><img class="header" src="./images/shield.png" alt=""><h1>The Game of Tribes</h1></div>
+    
+    <h3 class="clanstatus">Save your clan!</h3>
 
     <!-- SECTION: Game Start/Stop -->
     <button class="start">Start the Game!</button>
@@ -20,19 +21,24 @@
         <!--SECTION: Player Butttons-->
         <p class="entry">Choose your weapon!</p>
         <div class="weapons">
-            <button data-bt="0" class="b2" id="rock">Rock</button>
-            <button data-bt="1" class="b2" id="paper">Paper</button>
-            <button data-bt="2" class="b2" id="scissor">Scissor</button>
+            <button data-bt="0" class="b2" id="rock"><img class="bimg" src="./images/stone.png" alt="Stone"> Stone</button>
+            <button data-bt="1" class="b2" id="paper"><img class="bimg" src="./images/fur.png" alt="Fur"> Fur</button>
+            <button data-bt="2" class="b2" id="scissor"><img class="bimg" src="./images/spear.png" alt="Spear"> Spear</button>
+        </div>
+
+        <div class="scoreboard">
+            <div id="pboard"> <div> <strong> &emsp;Player&emsp; </strong> </div> <div class="board">0</div> <p id="player_choice"></p></div>
+            <div id="cboard"> <div> <strong> Opponent </strong> </div> <div class="board">0</div> <p id="computer_choice"></p></div>
         </div>
     
         <!-- SECTION: Choice -->
-        <p id="player_choice"> </p>
-        <p id="computer_choice"></p>
         
         <!-- SECTION: Result -->
         <p id="condition"></p>
-        <p id="result"></p>
+        <div class="final"><div id="round"></div> <div id="result"></div></div>
     </div>
     <script defer src="./script.js"></script>
+    <p style="font-size: 10px; color: #A98467;">All Credits for Icons goes to <a href="./thanks.html" style="font-size: 9px; color: #A98467;">Here</a></p>
 </body>
+
 </html>
