@@ -2,6 +2,7 @@ const items = ["ROCK", "PAPER", "SCISSOR"];
 
 function round(computerSelection, playerSelection) {
     // ✅ Use simple logic with arithmetic
+    // LINK ./index.html
     // Scissor beats Paper (2 vs 1)
     // Paper beats Rock (1 vs 0)
     // Rock beats Scissor (0 vs 2)
