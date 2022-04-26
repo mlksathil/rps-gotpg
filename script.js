@@ -75,7 +75,6 @@ function gameStart(e) {
     imgButtons.forEach(b => b.addEventListener('click', function(e) {
 
         choice = e.currentTarget.dataset.bt;
-        console.log(e.currentTarget)
 
         play++;
         roundStatus.textContent = `Round ${play}`;
@@ -95,6 +94,7 @@ function gameStart(e) {
         computerScoreBoard.children[1].textContent = `${computercount}`;
 
         if (play >= countPlay) {
+            console.log('Enter Before Game End')
             roundStatus.textContent = 'Game Over';
             if (playercount > computercount) {
                 result.textContent = `You Won the Match by ${playercount}`;
@@ -112,6 +112,7 @@ function gameStart(e) {
 
         // SECTION: Checks for Game End
         if (play > countPlay) {
+            console.log("Enter Game End");
             button.textContent = "Bargain for Game!";
             button.classList.remove('stop');
             container.style.setProperty('display','none');
@@ -119,7 +120,7 @@ function gameStart(e) {
             // SECTION: Reset Everything
             computercount = 0;
             playercount = 0;
-            play = 1;
+            play = 0;
 
             clanStatus.textContent = 'Save your Clan!';
             
@@ -133,8 +134,8 @@ function gameStart(e) {
             
             condition.textContent = '';
 
-            playerScoreBoard.lastChild.textContent = '0';
-            computerScoreBoard.lastChild.textContent = '0';
+            playerScoreBoard.children[1].textContent = '0';
+            computerScoreBoard.children[1].textContent = '0';
         }
     },false)
     );
@@ -145,7 +146,6 @@ let start = document.querySelector('.start');
 start.addEventListener('click', e => {
     if (e.target.textContent === 'Start the Game!' || e.target.textContent === 'Bargain for Game!') gameStart(e)
     else {
-        console.log(e.target)
         e.target.textContent = "Start the Game!";
         container.style.setProperty('display','none');
         e.target.classList.remove('stop');

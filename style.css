@@ -17,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 1.25rem;
-    align-content: flex-start;
+    align-content: center;
     background-color: #A98467;
     margin: none;
 }
