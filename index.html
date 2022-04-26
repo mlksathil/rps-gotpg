@@ -6,27 +6,33 @@
     
 </head>
 
-<!-- TODO: TAke this down -->
-
 <body>
 
     <!-- SECTION: Main -->
     <h1>The Game of Stone Age</h1>
     <p>Save your clan!</p>
 
+    <!-- SECTION: Game Start/Stop -->
     <button class="start">Start the Game!</button>
 
-    <p>Make Your Choice:</p>
-    <button data-bt="0" class="b2" id="rock">Rock</button>
-    <button data-bt="1" class="b2" id="paper">Paper</button>
-    <button data-bt="2" class="b2" id="scissor">Scissor</button>
-
     
-    <p class="player_choice"></p>
-    <p class="computer_choice"></p>
-
-    <p class="condition"></p>
-    <p class="result"></p>
+    <div class="container" style="display: none;">
+        <!--SECTION: Player Butttons-->
+        <p class="entry">Choose your weapon!</p>
+        <div class="weapons">
+            <button data-bt="0" class="b2" id="rock">Rock</button>
+            <button data-bt="1" class="b2" id="paper">Paper</button>
+            <button data-bt="2" class="b2" id="scissor">Scissor</button>
+        </div>
+    
+        <!-- SECTION: Choice -->
+        <p id="player_choice"> </p>
+        <p id="computer_choice"></p>
+        
+        <!-- SECTION: Result -->
+        <p id="condition"></p>
+        <p id="result"></p>
+    </div>
     <script defer src="./script.js"></script>
 </body>
 </html>

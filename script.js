@@ -1,63 +1,102 @@
-const items = ["ROCK", "PAPER", "SCISSOR"];
+// LINK ./index.html
 
-function round(computerSelection, playerSelection) {
+const items = ["Rock", "Paper", "Scissor"];
+let container = document.querySelector('.container')
+
+function condition(computerSelection, playerSelection) {
     // ✅ Use simple logic with arithmetic
-    // LINK ./index.html
     // Scissor beats Paper (2 vs 1)
     // Paper beats Rock (1 vs 0)
     // Rock beats Scissor (0 vs 2)
 
+
+
     if ((computerSelection - playerSelection === 1) || (computerSelection - playerSelection === -2)) {
-        console.log(`You Lose! - ${items[computerSelection]} beats ${items[playerSelection]}`);
+        // console.log(`You Lose! - ${items[computerSelection]} beats ${items[playerSelection]}`);
         console.log(`Computer Wins`);
-        return -1;
+        return "Computer";
     } else if (computerSelection - playerSelection === 0) {
-        console.log(`${items[playerSelection]} vs ${items[computerSelection]}`);
+        // console.log(`${items[playerSelection]} vs ${items[computerSelection]}`);
         console.log(`It's a Tie`);
-        return 0;
+        return "Tie";
     } else {
-        console.log(`You Win! - ${items[playerSelection]} beats ${items[computerSelection]}`);
+        // console.log(`You Win! - ${items[playerSelection]} beats ${items[computerSelection]}`);
         console.log(`Player Wins`);
-        return 1;
+        return "Player";
     }
 }
 
+function roundStart(choice) {
 
-function game() {
+    let playerText = document.querySelector('#player_choice');
+    let computerText = document.querySelector('#computer_choice');
+
+    let computerSelection = 0;
+    let playerSelection = choice;
+
+    // Player Choice
+    playerText.textContent = `You have chosen ${items[playerSelection]}`
+    
+    // Computer Choice
+    computerSelection = Math.floor(Math.random() * items.length);
+    computerText.textContent = `Computer has chosen ${items[computerSelection]}`;
+
+    return condition(computerSelection, playerSelection);
+
+}
+
+function gameStart(e) {
     const countPlay = 5;
     let computercount = 0;
     let playercount = 0;
+    let play = 1;
 
-    for (let i = 0; i < 5; i++) {
-        let computerSelection = Math.floor(Math.random() * items.length);
-        let playerSelection = undefined;
-        
-        innerloop: while(!items.includes(playerSelection)) {
-            
-            playerSelection = prompt("What's the choice?\nROCK\nPAPER\nSCISSOR").toUpperCase();
-            
-            if (!items.includes(playerSelection)) {
-                alert("Please re-enter a proper value");
-                continue innerloop;
+
+    // Make Conatiner Visible
+    container.style.setProperty('display','block');
+    // Change Button Status
+    let button = e.target
+    button.textContent = "Stop the Game";
+
+    let tmpWin = 0;
+
+    let weapons = document.querySelector('.weapons')
+    weapons.addEventListener('click', function(e) {
+
+        choice = e.target.dataset.bt;
+        tmpWin = roundStart(choice);
+        play++;
+
+        if (play > countPlay) {
+            button.textContent = "Restart the Game!";
+            container.style.setProperty('display','none');
+
+            computercount = 0;
+            playercount = 0;
+            play = 1;
+
+            if (playercount > computercount) {
+                console.info("%cPlayer Wins the Match","color: green")
+            } else if (playercount === computercount) {
+                console.info("It's a Tie - Replay")
+            } else {
+                console.info("%cComputer Wins - You Failed!","color: red")
             }
         }
-        
-        let a = round(computerSelection, items.indexOf(playerSelection));
 
-        if (a == 1) computercount++;
-        else if (a == -1);
+        if (tmpWin === "Computer") computercount++;
+        else if (tmpWin == "Tie");
         else playercount++;
-    
-        console.log(`%c For a Win of ${countPlay}: Player = ${playercount} | Computer = ${computercount}`,"color: lightblue");
-    }
 
-    if (playercount > computercount) {
-        console.info("%cPlayer Wins the Match","color: green")
-    } else if (playercount === computercount) {
-        console.info("It's a Tie - Do a Rematch")
-    } else {
-        console.info("%cComputer Wins - You Failed!","color: red")
-    }
+    });
 }
 
-game();
+// Starting the game
+let start = document.querySelector('.start');
+start.addEventListener('click', e => {
+    if (e.target.textContent === 'Start the Game!' || e.target.textContent === 'Restart the Game!') gameStart(e)
+    else {
+        e.target.textContent = "Start the Game!";
+        container.style.setProperty('display','none');
+    }
+});
