@@ -94,9 +94,9 @@ function gameRestart() {
         console.log("Enter Game End");
         
         if (button.textContent == "Run from Game!" || button.textContent == "Bargain??!") {
-            button.textContent = "Bargain? Please!";
+            button.textContent = "Pleasing Opponent!";
             clanStatus.textContent = 'Save your Clan!';
-            button.classList.remove('stop');
+            button.classList.add('stop');
         } else {
             button.textContent = "Play Rematch!";
             clanStatus.textContent = 'Mock them with a Rematch!';
@@ -138,7 +138,7 @@ imgButtons.forEach(b => b.addEventListener('click', function(e) {
     let tmpWin = 0;
     const countPlay = 5;
 
-    choice = e.target.dataset.bt;
+    choice = e.currentTarget.dataset.bt;
 
     play++;
     roundStatus.textContent = `Round ${play}`;
