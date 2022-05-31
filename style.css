@@ -118,9 +118,18 @@ button {
 }
 
 .stop {
+    background-color: #A98467 !important;
+}
+
+.stop:hover {
     background-color: #6C584C !important;
 }
 
 .start {
     background-color: #ADC178;
 }
+
+.start:hover {
+    background-color: #839945;
+}
+
